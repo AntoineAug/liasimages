@@ -72,7 +72,16 @@ function displayMenu()
 
 	foreach ($array as $link)
 	{
-		echo '<li><a href="/gallery/'.$link.'">'.$link.'</a>';
+		if (preg_match("#_#", $link))
+		{
+			$name = str_replace("_", " ", $link);
+		}
+		else
+		{
+			$name = $link;
+		}
+		
+		echo '<li><a href="/gallery/'.$link.'">'.$name.'</a>';
 	}
 }
 
