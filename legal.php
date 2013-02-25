@@ -19,6 +19,11 @@ include "header.php";
 				<h2>Hébergement</h2>
 				Ce site est hébergé chez LWS (Ligne Web Services) : <a href="http://www.lws.fr/">www.lws.fr</a><br/>
 				<br/>
+				Ligne Web Services<br/>
+				4 rue Galvani<br/>
+				75017 Paris, FRANCE<br/>
+				<br/>
+				+33 892 700 479
 			</div>
 		</div>
 		<div class="clear"></div>
