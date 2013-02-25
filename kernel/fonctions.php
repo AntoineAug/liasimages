@@ -102,8 +102,16 @@ function displayPageTitle()
 	}
 	elseif (!empty($_GET['name']))
 	{
+		if (!preg_match("#_#", $_GET['name']))
+		{
+			$title = $_GET['name'];
+		}
+		else
+		{
+			$title = str_replace("_", " ", $_GET['name']);
+		}
 
-		echo ucfirst($_GET['name']).' | '.$default;
+		echo ucfirst($title).' | '.$default;
 	}
 	elseif (preg_match("#404#", $_SERVER['PHP_SELF']))
 	{
