@@ -3,6 +3,7 @@ RewriteEngine On
 
 RewriteCond %{HTTP_HOST} ^(liasimages\.com)$ [NC]
 RewriteRule ^ http://www.%1%{REQUEST_URI} [R=301,L]
+RewriteRule ^mail http://46.218.144.17/webmail/ [R=301,L]
 RewriteRule ^([a-z]+)$ $1.php [L,QSA]
 RewriteRule ^gallery-([a-z_]+)$ gallery.php?name=$1 [L,QSA]
 RewriteRule ^gallery/([a-z_]+)$ gallery.php?name=$1 [L,QSA]
