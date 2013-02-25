@@ -80,8 +80,8 @@ function displayMenu()
 		{
 			$name = $link;
 		}
-		
-		echo '<li><a href="/gallery/'.$link.'">'.$name.'</a>';
+
+		echo '<li><a href="/gallery/'.$link.'">'.$name.'</a></li>';
 	}
 }
 
