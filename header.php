@@ -42,6 +42,7 @@ require "kernel/fonctions.php";
 //	Et... 42.
 //	Bisous !
 !-->
+<!-- Ce lien est carrément stylé. -->
 <script src="/js/js.js"></script>
 	<div id="header">
 		<div id="logo"><a href="/" title="Retour à l'accueil"/></a></div>
