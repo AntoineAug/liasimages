@@ -11,10 +11,14 @@ require "kernel/fonctions.php";
 	<meta name="author" content="Antoine Augusti"/> 
 	<meta name="revisit-after" content="2 days"/> 
 	<meta name="Robots" content="all"/>
+
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/css/style.css" />
+
 	<link rel="icon" type="image/png" href="/images/favicon.png"> 
 	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
+	<meta property="og:image" content="http://www.liasimages.com/images/facebook.jpg"/>
+
 	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
 	<script src="/js/mousewheel.js"></script>
 
