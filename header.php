@@ -51,7 +51,7 @@ require "kernel/fonctions.php";
 				displayMenu();
 			?>
 			<li>
-				<a href="/contact">Contact</a>
+				<a href="/contact" onClick="_gaq.push(['_trackEvent', 'Gallerie', 'clic', 'Contact']);">Contact</a>
 			</li>
 		</ul>
 	</div><!-- END HEADER -->
