@@ -12,7 +12,7 @@ include "header.php";
 				contact@liasimages.com</br/>
 				+(33) 6 78 90 13 45<br/>
 				<br/>
-				Portrait - Book - Edito - Test agence - Edito - Campagne publicitaire - Mariage<br/>
+				Portrait - Book - Edito - Test agence - Campagne publicitaire - Mariage<br/>
 				Contactez-moi via le formulaire ci-dessous pour plus d'informations sur mes prestations et services.<br/>
 			</div>
 			<form class="form-horizontal" id="contactForm" method="post" action="/contact">
