@@ -22,7 +22,7 @@ if (empty($sujet) OR empty($message) OR empty($email) OR empty($nom))
 else      
 {
 	  
-	$headers ='From: "'.$nom.'"<no-reply@liasimages.com>'."\n";
+	$headers ='From: <no-reply@liasimages.com>'."\n";
 	$headers .='Reply-To: '.$email.''."\n";
 	$headers .= 'MIME-Version: 1.0' . "\r\n";
 	$headers .='Content-Type: text/plain; charset="iso-8859-1"'."\n";
@@ -34,7 +34,7 @@ else
 	$message .= "\r\n";
 	$message .= "------------------ Mail envoyé depuis www.liasimages.com ------------------";
 	
-	if (mail("contact@liasimages.com", stripslashes($sujet), stripslashes($message), $headers))
+	if (mail("antoine.augusti@gmail.com", stripslashes($sujet), stripslashes($message), $headers))
 	{ 
 		echo '3';
 	}
