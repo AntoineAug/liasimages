@@ -45,7 +45,7 @@ function getFilesInDirectory ($directory)
 
 	foreach (new DirectoryIterator($parentDirectory.'/'.$directory) as $fileInfo) 
 	{
-	    if ($fileInfo->isDot() OR $fileInfo->isDir())
+	    if ($fileInfo->isDot() OR $fileInfo->isDir() OR $fileInfo->getFilename() == '.DS_Store')
 	    	continue;
 	    elseif ($fileInfo->isFile())
 	    	$array[] = $fileInfo->getFilename();
@@ -71,9 +71,9 @@ function displayMenu()
 				$name = str_replace("_", " ", $link);
 			else
 				$name = $link;
+		
+			echo '<li><a href="/gallery/'.$link.'" onClick="_gaq.push([\'_trackEvent\', \'Gallerie\', \'clic\', \''.$name.'\']);">'.$name.'</a></li>';
 		}
-
-		echo '<li><a href="/gallery/'.$link.'" onClick="_gaq.push([\'_trackEvent\', \'Gallerie\', \'clic\', \''.$name.'\']);">'.$name.'</a></li>';
 	}
 }
 
