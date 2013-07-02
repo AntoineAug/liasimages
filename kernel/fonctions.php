@@ -1,14 +1,14 @@
 <?php
-
 $parentDirectory = getRootDirectory();
+
+// The 'tarifs' page (A very special page, indeed!)
+define("TARIFS_PAGE", 'tarifs');
 
 // Check if the gallery exists
 if (isset($_GET['name']))
 {
 	if (!in_array($_GET['name'], getChildrenDirectoriesIn('images')))
-	{
 		header("Location: /404");
-	}
 }
 
 function getRootDirectory()
@@ -26,13 +26,9 @@ function getChildrenDirectoriesIn($directory)
 	foreach (new DirectoryIterator($parentDirectory.'/'.$directory) as $fileInfo) 
 	{
 	    if ($fileInfo->isDot())
-	    {
 	    	continue;
-	    }
 	    elseif ($fileInfo->isDir())
-	    {
 	    	$array[] = $fileInfo->getFilename();
-	    }
 	}
 
 	// Let's sort the array
@@ -50,13 +46,9 @@ function getFilesInDirectory ($directory)
 	foreach (new DirectoryIterator($parentDirectory.'/'.$directory) as $fileInfo) 
 	{
 	    if ($fileInfo->isDot() OR $fileInfo->isDir())
-	    {
 	    	continue;
-	    }
 	    elseif ($fileInfo->isFile())
-	    {
 	    	$array[] = $fileInfo->getFilename();
-	    }
 	}
 
 	// Let's sort the array
@@ -72,13 +64,13 @@ function displayMenu()
 
 	foreach ($array as $link)
 	{
-		if (preg_match("#_#", $link))
+		// We don't want to display the 'tarifs' page
+		if ($link != TARIFS_PAGE)
 		{
-			$name = str_replace("_", " ", $link);
-		}
-		else
-		{
-			$name = $link;
+			if (preg_match("#_#", $link))
+				$name = str_replace("_", " ", $link);
+			else
+				$name = $link;
 		}
 
 		echo '<li><a href="/gallery/'.$link.'" onClick="_gaq.push([\'_trackEvent\', \'Gallerie\', \'clic\', \''.$name.'\']);">'.$name.'</a></li>';
@@ -93,9 +85,15 @@ function displayPageTitle()
 	{
 		$name_page = substr($_SERVER['PHP_SELF'], 1, -4);
 
-		if ($name_page == 'legal')
+		switch ($name_page) 
 		{
-			$name_page = 'Mentions légales';
+			case 'legal':
+				$name_page = 'Mentions légales';
+				break;
+			
+			case TARIFS_PAGE:
+				$name_page = 'Tarifs';
+				break;
 		}
 
 		echo ucfirst($name_page).' | '.$default;
@@ -103,38 +101,34 @@ function displayPageTitle()
 	elseif (!empty($_GET['name']))
 	{
 		if (!preg_match("#_#", $_GET['name']))
-		{
 			$title = $_GET['name'];
-		}
 		else
-		{
 			$title = str_replace("_", " ", $_GET['name']);
-		}
 
 		echo ucfirst($title).' | '.$default;
 	}
 	elseif (preg_match("#404#", $_SERVER['PHP_SELF']))
-	{
 		echo '404 | '.$default;
-	}
 	else
-	{
 		echo $default;
-	}
 
 }
 
-function displayGallery()
+function displayGallery($forceName=null)
 {
 	global $parentDirectory;
 
-	$array_images = getFilesInDirectory('images/'.$_GET['name']);
+	// By default, based on $_GET['name'], unless we want to use a custom name
+	if (is_null($forceName))
+		$name = $_GET['name'];
+	elseif (!empty($forceName))
+		$name = $forceName;
 
-	$name = $_GET['name'];
+	$array_images = getFilesInDirectory('images/'.$name);
 
 	foreach ($array_images as $image)
 	{
-		list ($width, $height, $type, $attr) = getimagesize($parentDirectory.'/images/'.$_GET['name'].'/'.$image);
+		list ($width, $height, $type, $attr) = getimagesize($parentDirectory.'/images/'.$name.'/'.$image);
 
 		$ratio = $height / 750;
 		$width = floor($width / $ratio);
