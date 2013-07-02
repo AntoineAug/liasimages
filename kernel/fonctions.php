@@ -31,7 +31,7 @@ function getChildrenDirectoriesIn($directory)
 	    	$array[] = $fileInfo->getFilename();
 	}
 
-	// Let's sort the array
+	// Let's sort the array ("natural ordering")
 	natsort($array);
 
 	return $array;
@@ -51,7 +51,7 @@ function getFilesInDirectory ($directory)
 	    	$array[] = $fileInfo->getFilename();
 	}
 
-	// Let's sort the array
+	// Let's sort the array ("natural ordering")
 	natsort($array);
 
 	return $array;	
