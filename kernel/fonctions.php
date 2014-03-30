@@ -72,7 +72,7 @@ function displayMenu()
 			else
 				$name = $link;
 		
-			echo '<li><a href="/gallery/'.$link.'" onClick="_gaq.push([\'_trackEvent\', \'Gallerie\', \'clic\', \''.$name.'\']);">'.$name.'</a></li>';
+			echo '<li><a href="/gallery/'.$link.'" onClick="_gaq.push([\'_trackEvent\', \'Gallerie\', \'clic\', \''.$name.'\']);">'.ucfirst($name).'</a></li>';
 		}
 	}
 }

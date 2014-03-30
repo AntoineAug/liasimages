@@ -12,12 +12,11 @@ require "kernel/fonctions.php";
 	<meta name="revisit-after" content="2 days"/> 
 	<meta name="Robots" content="all"/>
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="/css/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100|Roboto+Condensed' rel='stylesheet' type='text/css'><link rel="stylesheet" href="/css/style.css" />
 
 	<link rel="icon" type="image/png" href="/images/favicon.png"> 
 	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
-	<meta property="og:image" content="http://www.liasimages.com/images/facebook.jpg"/>
+	<meta property="og:image" content="http://www.liasimages.com/images/accueil.jpg"/>
 
 	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
 	<script src="/js/mousewheel.js"></script>
@@ -44,14 +43,17 @@ require "kernel/fonctions.php";
 !-->
 <!-- Ce lien est carrément stylé. -->
 <script src="/js/js.js"></script>
-	<div id="header">
-		<div id="logo"><a href="/" title="Retour à l'accueil"/></a></div>
-		<ul id="menu">
-			<?php
-				displayMenu();
-			?>
-			<li>
-				<a href="/contact" onClick="_gaq.push(['_trackEvent', 'Gallerie', 'clic', 'Contact']);">Contact</a>
-			</li>
-		</ul>
-	</div><!-- END HEADER -->
+<div id="wrap">
+	<div id="main">
+		<div id="sidebar">
+			<ul id="menu">
+				<?php
+					displayMenu();
+				?>
+				<li>
+					<a href="/contact" onClick="_gaq.push(['_trackEvent', 'Gallerie', 'clic', 'Contact']);">Contact</a>
+				</li>
+			</ul>
+		</div><!-- END SIDEBAR -->
+
+		<div id="content">
