@@ -202,6 +202,22 @@ h3.name {
 #footer a:hover {
 	border-bottom: 1px dashed #333;
 }
+#footer a#logo {
+	background: url(../images/logo.png);
+	position: absolute;
+	width: 250px;
+	height: 76px;
+	display: block;
+	top: -48px;
+	left: 0;
+	transition: opacity .25s linear;
+   	-moz-transition: opacity .25s linear;
+   	-webkit-transition: opacity .25s linear;
+}
+#footer a#logo:hover {
+	border: none;
+	opacity: 0.5;
+}
 #footer .separator {
 	margin: 0 20px;
 	color: #444;

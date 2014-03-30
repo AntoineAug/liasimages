@@ -3,6 +3,7 @@
 </div><!-- END WRAP -->
 
 <div id="footer">
+	<a id="logo" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>"></a>
 	<span class="separator">-</span>
 		<a href="https://www.facebook.com/Lia.s.Images" onClick="_gaq.push(['_trackEvent', 'Footer', 'clic', 'Facebook']);">Facebook</a>
 	<?php if (is_dir(getRootDirectory().'/images/'.TARIFS_PAGE)): ?>	
