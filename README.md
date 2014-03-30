@@ -5,6 +5,7 @@ Source code for http://www.liasimages.com
 Author
 ------
 **Célia HANINI** - All images belong to her.
+
 **Antoine AUGUSTI** - For the source code. http://www.antoine-augusti.fr
 
 Copyright

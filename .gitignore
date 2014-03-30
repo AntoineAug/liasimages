@@ -1,4 +1,8 @@
 .DS_STORE
-/images/make_up/
-/images/girls/
+images/beauty/
+images/fashion/
+images/men/
+images/outside/
+images/tarifs/
+stats/*
 sftp-config.json
