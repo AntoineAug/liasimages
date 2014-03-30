@@ -1,6 +1,7 @@
 		</div><!-- END SIDEBAR -->
 	</div><!-- END MAIN -->
 </div><!-- END WRAP -->
+
 <div id="footer">
 	<span class="separator">-</span>
 		<a href="https://www.facebook.com/Lia.s.Images" onClick="_gaq.push(['_trackEvent', 'Footer', 'clic', 'Facebook']);">Facebook</a>
@@ -13,5 +14,6 @@
 	<span class="separator">-</span>
 	Tous droits réservés &copy; <?= date("Y"); ?>
 </div><!-- END FOOTER -->
+
 </body>
 </html>

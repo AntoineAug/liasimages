@@ -1,7 +1,4 @@
-<?php
-include "header.php";
-?>
-
+<?php include "header.php"; ?>
 	<div id="contact">
 		<div class="bg"></div>
 		<div class="content">
@@ -54,6 +51,4 @@ include "header.php";
 		<div class="clear"></div>
 	</div><!-- END CONTACT-->
 
-<?php
-include "footer.php";
-?>
+<?php include "footer.php"; ?>

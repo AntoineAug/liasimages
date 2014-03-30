@@ -4,9 +4,7 @@ include "header.php";
 	
 	<div id="gallery">
 		<ul>
-		<?php
-			displayGallery();
-		?>
+			<?php displayGallery(); ?>
 		</ul>
 	</div><!-- END GALLERY -->
 

@@ -1,30 +1,24 @@
 <?php
-$parentDirectory = getRootDirectory();
-
 // The 'tarifs' page (A very special page, indeed!)
 define("TARIFS_PAGE", 'tarifs');
 
 // Check if the gallery exists
-if (isset($_GET['name']))
-{
+if (isset($_GET['name'])) {
 	if (!in_array($_GET['name'], getChildrenDirectoriesIn('images')))
 		header("Location: /404");
 }
 
-function getRootDirectory()
-{
+function getRootDirectory() {
 	$parent = explode('kernel', dirname(__FILE__));
 	return $parent[0];
 }
 
-function getChildrenDirectoriesIn($directory)
-{
-	global $parentDirectory;
+function getChildrenDirectoriesIn($directory) {
+	$parentDirectory = getRootDirectory();
 
 	$array = array();
 
-	foreach (new DirectoryIterator($parentDirectory.'/'.$directory) as $fileInfo) 
-	{
+	foreach (new DirectoryIterator($parentDirectory.'/'.$directory) as $fileInfo) {
 	    if ($fileInfo->isDot())
 	    	continue;
 	    elseif ($fileInfo->isDir())
@@ -37,14 +31,12 @@ function getChildrenDirectoriesIn($directory)
 	return $array;
 }
 
-function getFilesInDirectory ($directory)
-{
-	global $parentDirectory;
+function getFilesInDirectory($directory) {
+	$parentDirectory = getRootDirectory();
 
 	$array = array();
 
-	foreach (new DirectoryIterator($parentDirectory.'/'.$directory) as $fileInfo) 
-	{
+	foreach (new DirectoryIterator($parentDirectory.'/'.$directory) as $fileInfo) {
 	    if ($fileInfo->isDot() OR $fileInfo->isDir() OR $fileInfo->getFilename() == '.DS_Store')
 	    	continue;
 	    elseif ($fileInfo->isFile())
@@ -57,8 +49,7 @@ function getFilesInDirectory ($directory)
 	return $array;	
 }
 
-function displayMenu()
-{
+function displayMenu() {
 	$array = array();
 	$array = getChildrenDirectoriesIn('images');
 
@@ -77,8 +68,7 @@ function displayMenu()
 	}
 }
 
-function displayPageTitle()
-{
+function displayPageTitle() {
 	$default = "Lia's Images";
 
 	if (empty($_GET['name']) AND !preg_match("#404|index#", $_SERVER['PHP_SELF']))
@@ -114,9 +104,8 @@ function displayPageTitle()
 
 }
 
-function displayGallery($forceName=null)
-{
-	global $parentDirectory;
+function displayGallery($forceName=null) {
+	$parentDirectory = getRootDirectory();
 
 	// By default, based on $_GET['name'], unless we want to use a custom name
 	if (is_null($forceName))

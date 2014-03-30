@@ -1,6 +1,4 @@
-<?php
-require "kernel/fonctions.php";
-?>
+<?php require "kernel/fonctions.php"; ?>
 <!DOCTYPE html>
 <html lang="fr"> 
 <head>
