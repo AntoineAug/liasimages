@@ -174,9 +174,8 @@ h3.name {
 #gallery ul li:last-child {
 	margin-right: 0;
 }
-#gallery ul li span {
+#gallery ul li img {
 	display: inline-block;
-	min-width:500px;
 	height:750px;
 	background-position: center;
 	background-size:cover;

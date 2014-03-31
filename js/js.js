@@ -40,11 +40,10 @@ var contact_mail_sent = "L'email a bien été envoyé !";
 $(document).ready(function()
 {
 	var hauteurEcran = $(window).height() - 150;
-	console.log(hauteurEcran);
 	$("#contactForm,#legal").css("display", "none");
 	$("#legal").fadeIn(1500);
 	$("#contactForm").fadeIn(2500);
-	$("#gallery, #gallery ul li span, #single_image").css({ 'height': hauteurEcran + "px" });
+	$("#gallery, #gallery ul li img, #single_image").css({ 'height': hauteurEcran + "px" });
 
 	$("#contactForm").submit(function(event)
 	{

@@ -117,11 +117,6 @@ function displayGallery($forceName=null) {
 
 	foreach ($array_images as $image)
 	{
-		list ($width, $height, $type, $attr) = getimagesize($parentDirectory.'/images/'.$name.'/'.$image);
-
-		$ratio = $height / 750;
-		$width = floor($width / $ratio);
-
-		echo '<li><span style="background-image:url(/images/'.$name.'/'.$image.');width:'.$width.'px"></span></li>';
+		echo '<li><img src="/images/'.$name.'/'.$image.'"></li>';
 	}
 }
