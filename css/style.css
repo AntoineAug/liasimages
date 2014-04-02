@@ -176,7 +176,7 @@ h3.name {
 }
 #gallery ul li img {
 	display: inline-block;
-	height:750px;
+	min-height:750px;
 	background-position: center;
 	background-size:cover;
 	background-repeat: no-repeat;
@@ -231,6 +231,9 @@ h3.name {
 }
 #presentation {
 	padding: 0 20px;
+}
+#gallery, #single_image {
+	display: none;
 }
 /*!
  * Bootstrap v2.3.0

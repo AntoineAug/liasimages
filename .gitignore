@@ -6,3 +6,4 @@ images/outside/
 images/tarifs/
 stats/*
 sftp-config.json
+*.sublime-*

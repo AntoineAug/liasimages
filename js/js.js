@@ -26,7 +26,7 @@ $(function() {
    $("#gallery").mousewheel(function(event, delta) {
 
 	  this.scrollLeft -= (delta * 150);
-	
+
 	  event.preventDefault();
 
    });
@@ -39,11 +39,23 @@ var contact_mail_sent = "L'email a bien été envoyé !";
 
 $(document).ready(function()
 {
-	var hauteurEcran = $(window).height() - 150;
-	$("#contactForm,#legal").css("display", "none");
-	$("#legal").fadeIn(1500);
-	$("#contactForm").fadeIn(2500);
-	$("#gallery, #gallery ul li img, #single_image").css({ 'height': hauteurEcran + "px" });
+	$("#gallery, #single_image").fadeIn(1200);
+
+	function tailleGallerie() {
+		var hauteurEcran = $(window).height() - 150;
+		$("#contactForm,#legal").css("display", "none");
+		$("#legal").fadeIn(1500);
+		$("#contactForm").fadeIn(2500);
+		$("#gallery, #gallery ul li, #single_image").css({ 'height': hauteurEcran + "px" });
+		$("#gallery ul li img").attr('height', hauteurEcran);
+	}
+
+	tailleGallerie();
+	
+	$(window).resize(function(){
+		tailleGallerie();
+	});
+
 
 	$("#contactForm").submit(function(event)
 	{
