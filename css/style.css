@@ -232,7 +232,7 @@ h3.name {
 #presentation {
 	padding: 0 20px;
 }
-#gallery, #single_image {
+#gallery, #single_image, #contactForm, #legal {
 	display: none;
 }
 /*!

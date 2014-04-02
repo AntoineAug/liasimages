@@ -43,7 +43,6 @@ $(document).ready(function()
 
 	function tailleGallerie() {
 		var hauteurEcran = $(window).height() - 150;
-		$("#contactForm,#legal").css("display", "none");
 		$("#legal").fadeIn(1500);
 		$("#contactForm").fadeIn(2500);
 		$("#gallery, #gallery ul li, #single_image").css({ 'height': hauteurEcran + "px" });
